@@ -16,32 +16,38 @@ int main()
     double BBQ_Chicken_Wings = 155.00;
     double Extra_Cheese = 25.00;
     double Egg = 20.00;
-    double totalAmount;
-    int select;
-    int quantity =0;
-    int flavour;
-    int quantityOfBurger;
-    int quantityOfPizza;
+    double Subtotal;
+    int    select;
+    int   quantity;
+    int   flavour;
+    char  letter;
 
-    cout<<"\t\t----------Welcome To Mad Chicken---------\n\n";
+
+
+    cout<<"\t\t\n\n----------Welcome To Mad Chicken---------\n\n";
     string name;
     cout<<" Please Enter Your name: ";
     getline(cin,name);
 
 
-    cout<<"\n\nHello "<<name<<", What would you like to have?\n\n\n";
+    cout<<"\n\nHello "<<name<<", What would you like to have? ";
+    beginning:
+
+        double totalAmount[100];
+    cout<<"\n\n\n------------MENU------------\n\n";
 
     string menu[] = {"\0"," Burger"," Pizza"," Chaap & others"," sandwich"," Naga"," Drinks"," Addons"};
     for(int i = 1; i<=7;i++){
+
         cout<<i<<")"<<menu[i]<<endl;
     }
 
     cout<<"\nPlease Select Your Food: ";
     cin>>select; //food selection
 
-if (select==1) //if select burger //Naga Burger //Chicken Burger
+if (select==1) //if select 1) burger //Naga Burger //Chicken Burger
 {
-    string burgerFlavour [] = {"\0","Naga Burger","Chicken Burger"};
+    string burgerFlavour [] = {"\n\0","Naga Burger","Chicken Burger"};
     for (int i = 1; i<=2; i++)
 {
 
@@ -49,27 +55,42 @@ if (select==1) //if select burger //Naga Burger //Chicken Burger
         cout<<i<<") "<<burgerFlavour[i]<<endl;
 }
 
-    cout<<"Enter Your Flavour: ";
+    cout<<"\nEnter Your Flavour: ";
     cin>>flavour;
     if (flavour == 1)
 
-        cout<<" Price of Naga Burger: "<<Naga_Burger<<" Tk "<<endl;
+        cout<<"\nPrice of Naga Burger: "<<Naga_Burger<<" Tk "<<endl;
 
 if (flavour==2)
-        cout<<" Price of Chicken Burger is: "<<Chicken_Burger<<" TK "<<endl;
+        cout<<"\nPrice of Chicken Burger is: "<<Chicken_Burger<<" TK "<<endl;
 
-    cout<<"Select the Quantity: ";
+    cout<<"\nSelect the Quantity: ";
     cin>>quantity;
+
+
+    if (flavour== 1 )
+
+    Subtotal = quantity*Naga_Burger;
+
+
+
+    if (flavour== 2)
+
+    Subtotal = quantity*Chicken_Burger;
+
+    //stotal [0]= Subtotal[0]
+
+
+    cout<<"\nYour Amount is: "<<Subtotal<<" TK ";
 }
 
-
- else if (select==2) //if select pizza //Cheese Pizza // Chicken BBQ Pizza
+ else if (select==2) //if select 2) pizza //Cheese Pizza // Chicken BBQ Pizza
 {
     string pizzaFlavour [] = {"\0","Cheese Pizza","Chicken BBQ Pizza"};
     for(int i = 1; i<=2; i++){
     cout<<i<<") "<<pizzaFlavour[i]<<endl;
 }
-    cout<<"Enter Your Flavour: ";
+    cout<<"\nEnter Your Flavour: ";
     cin>>flavour;
 
     if (flavour == 1)
@@ -80,8 +101,22 @@ if (flavour==2)
 
         cout<<"\nPrice of Chicken BBQ Pizza is: "<<Chicken_BBQ_Pizza<<" TK "<<endl;
 
-    //cout<<"Select the Quantity: ";
-    //cin>>quantity;
+    cout<<"\nSelect the Quantity: ";
+    cin>>quantity;
+
+    if (flavour== 1 )
+
+    Subtotal = quantity*Cheese_Pizza;
+
+
+
+    if (flavour== 2)
+
+    Subtotal = quantity*Chicken_BBQ_Pizza;
+     //stotal [1]= Subtotal[1]
+
+
+    cout<<"\nYour Amount is: "<<Subtotal<<" TK ";
 }
 else if (select==3) //if select chaap & others //Chicken_Chaap // Soft_Porota
 {
@@ -93,7 +128,7 @@ else if (select==3) //if select chaap & others //Chicken_Chaap // Soft_Porota
         cout<<i<<") "<<chaapFlavour[i]<<endl;
 }
 
-    cout<<"Enter Your Flavour: ";
+    cout<<"\nEnter Your Flavour: ";
     cin>>flavour;
     if (flavour == 1)
 
@@ -104,6 +139,21 @@ if (flavour==2)
 
     cout<<"Select the Quantity: ";
     cin>>quantity;
+
+    if (flavour== 1 )
+
+    Subtotal = quantity*Chicken_Chaap;
+
+
+
+    if (flavour== 2)
+
+    Subtotal = quantity*Soft_Porota;
+    //stotal [2]= Subtotal3
+
+
+    cout<<"\nYour Amount is: "<<Subtotal<<" TK ";
+
 }
 
 
@@ -117,7 +167,7 @@ else if (select==4) //if select Sandwich //Chicken_Sandwich // Sub_Sandwich
         cout<<i<<") "<<sandwichFlavour[i]<<endl;
 }
 
-    cout<<"Enter Your Flavour: ";
+    cout<<"\nEnter Your Flavour: ";
     cin>>flavour;
     if (flavour == 1)
 
@@ -126,8 +176,23 @@ else if (select==4) //if select Sandwich //Chicken_Sandwich // Sub_Sandwich
 if (flavour==2)
         cout<<"\nPrice of Sub Sandwich is: "<<Sub_Sandwich<<" TK "<<endl;
 
-    cout<<"Select the Quantity: ";
+    cout<<"\nSelect the Quantity: ";
     cin>>quantity;
+
+      if (flavour== 1 )
+
+    Subtotal = quantity*Chicken_Sandwich;
+
+
+
+    if (flavour== 2)
+
+    Subtotal = quantity*Sub_Sandwich;
+   // stotal[3] = Subtotal4;
+
+
+    cout<<"\nYour Amount is: "<<Subtotal<<" TK ";
+
 }
 
 else if (select==5) //if select naga //Mad_Drums // BBQ_Chicken_Wings
@@ -140,7 +205,7 @@ else if (select==5) //if select naga //Mad_Drums // BBQ_Chicken_Wings
         cout<<i<<") "<<nagaFlavour[i]<<endl;
 }
 
-    cout<<"Enter Your Flavour: ";
+    cout<<"\nEnter Your Flavour: ";
     cin>>flavour;
     if (flavour == 1)
 
@@ -149,8 +214,22 @@ else if (select==5) //if select naga //Mad_Drums // BBQ_Chicken_Wings
 if (flavour==2)
         cout<<"\nPrice of BBQ Chicken Wings is: "<<BBQ_Chicken_Wings<<" TK "<<endl;
 
-    cout<<"Select the Quantity: ";
+    cout<<"\nSelect the Quantity: ";
     cin>>quantity;
+
+          if (flavour== 1 )
+
+    Subtotal = quantity*Mad_Drums;
+
+
+
+    if (flavour== 2)
+
+    Subtotal = quantity*BBQ_Chicken_Wings;
+    //stotal [] = Subtotal[4];
+
+
+    cout<<"\nYour Amount is: "<<Subtotal<<" TK ";
 }
 
 else if (select==6) //if select Drinks //Cold_Coffee // Special_Locchi
@@ -163,7 +242,7 @@ else if (select==6) //if select Drinks //Cold_Coffee // Special_Locchi
         cout<<i<<") "<<drinksFlavour[i]<<endl;
 }
 
-    cout<<"Enter Your Flavour: ";
+    cout<<"\nEnter Your Flavour: ";
     cin>>flavour;
     if (flavour == 1)
 
@@ -172,8 +251,22 @@ else if (select==6) //if select Drinks //Cold_Coffee // Special_Locchi
 if (flavour==2)
         cout<<"\nPrice of Special Locchiis: "<<Special_Locchi<<" TK "<<endl;
 
-    cout<<"Select the Quantity: ";
+    cout<<"\nSelect the Quantity: ";
     cin>>quantity;
+
+    if (flavour== 1 )
+
+    Subtotal = quantity*Cold_Coffee ;
+
+
+
+    if (flavour== 2)
+
+    Subtotal = quantity*Special_Locchi;
+    //stotal [5] = Subtotal[5];
+
+
+    cout<<"\nYour Amount is: "<<Subtotal<<" TK ";
 }
 
  else if (select==7) //if select Addons //Extra_Cheese // Egg
@@ -181,12 +274,10 @@ if (flavour==2)
     string addonsFlavour [] = {"\0","Extra Cheese ","Egg "};
     for (int i = 1; i<=2; i++)
 {
-
-
         cout<<i<<") "<<addonsFlavour[i]<<endl;
 }
 
-    cout<<"Enter Your Flavour: ";
+    cout<<"\nEnter Your Flavour: ";
     cin>>flavour;
     if (flavour == 1)
 
@@ -195,131 +286,44 @@ if (flavour==2)
 if (flavour==2)
         cout<<"\nPrice of Egg: "<<Egg<<" TK "<<endl;
 
-    cout<<"Select the Quantity: ";
+    cout<<"\nSelect the Quantity: ";
     cin>>quantity;
+
+    if (flavour== 1 )
+
+    Subtotal = quantity*Extra_Cheese;
+
+
+
+    if (flavour== 2)
+
+    Subtotal = quantity*Egg;
+   // stotal [6] = Subtotal[6];
+
+
+    cout<<"\n\nYour Amount is: "<<Subtotal<<" TK ";
 }
 
-switch (flavour)
-  {
 
-  case 1: flavour = Naga_Burger;
-  cin>>quantityOfBurger;
-          totalAmount = quantityOfBurger*Naga_Burger;
-          break;
-  case 2: flavour = Chicken_Burger;
+    cout<<"\n\nDo you want to order anything else "<<name<<"?";
+    cout<<"\n\nIf yes, then type 'Y' otherwise type 'N': ";
+    cin>>letter;
+    if (letter=='Y' || letter=='y')
+    {
+        goto beginning;
+    }
 
-   cin>>quantityOfBurger;
-          totalAmount = quantityOfBurger*Chicken_Burger;
-          break;
-  case 3: flavour = Cheese_Pizza;
-  cout<<"Enter The Quantity: ";
-  cin>>quantityOfPizza;
-          totalAmount = quantityOfPizza*Cheese_Pizza;
-          cout<<"Total Amount "<<totalAmount;
-          break;
+    else if (letter == 'N' || letter == 'n')
+        totalAmount = Subtotal + Subtotal + Subtotal + Subtotal + Subtotal + Subtotal + Subtotal;
+     cout<<"\n\nYour Total Amount is: "<<totalAmount<<endl;
 
-  case 4: flavour = Chicken_BBQ_Pizza;
-  cout<<"Enter The Quantity: ";
-  cin>>quantityOfPizza;
+        cout<<"\n\nThank You "<<name<<" for ordering! :) ";
+        cout<<"\n\nEnjoy Your Food :)\n\n\n ";
 
-          totalAmount = quantityOfPizza*Chicken_BBQ_Pizza;
-           cout<<"Total Amount "<<totalAmount;
-          break;
-  case 5: flavour = Chicken_Sandwich;
-          totalAmount = quantity*Chicken_Sandwich;
-          break;
-  case 6: flavour = Sub_Sandwich;
-          totalAmount = quantity*Sub_Sandwich;
-          break;
-
-
-  case 7: flavour = Cold_Coffee ;
-          totalAmount = quantity*Cold_Coffee ;
-          break;
-  case 8:   flavour = Special_Locchi;
-          totalAmount = quantity*Special_Locchi;
-          break;
-  case 9: flavour = Chicken_Chaap;
-           totalAmount = quantity*Chicken_Chaap;
-          break;
-
- case 10: flavour = Soft_Porota;
-          totalAmount = quantity*Soft_Porota;
-          break;
-  case 11:  flavour = Mad_Drums;
-          totalAmount = quantity*Mad_Drums;
-          break;
-  case 12: flavour = BBQ_Chicken_Wings;
-           totalAmount = quantity*BBQ_Chicken_Wings;
-          break;
-
-  case 13: flavour = Extra_Cheese;
-          totalAmount = quantity*Extra_Cheese;
-          break;
-  case 14:flavour = Egg;
-          totalAmount = quantity*Egg;
-          break;
-  }
-
-
-
-  /*switch (flavour)
-  {
-
-  case 1: flavour = Naga_Burger;
-          totalAmount = quantity*Naga_Burger;
-          break;
-  case 2: flavour = Chicken_Burger;
-          totalAmount = quantity*Chicken_Burger;
-          break;
-  case 3: flavour = Cheese_Pizza;
-          totalAmount = quantity*Cheese_Pizza;
-          break;
-
-  case 4: flavour = Chicken_BBQ_Pizza;
-          totalAmount = quantity*Chicken_BBQ_Pizza;
-          break;
-  case 5: flavour = Chicken_Sandwich;
-          totalAmount = quantity*Chicken_Sandwich;
-          break;
-  case 6: flavour = Sub_Sandwich;
-          totalAmount = quantity*Sub_Sandwich;
-          break;
-
-
-  case 7: flavour = Cold_Coffee ;
-          totalAmount = quantity*Cold_Coffee ;
-          break;
-  case 8:   flavour = Special_Locchi;
-          totalAmount = quantity*Special_Locchi;
-          break;
-  case 9: flavour = Chicken_Chaap;
-           totalAmount = quantity*Chicken_Chaap;
-          break;
-
- case 10: flavour = Soft_Porota;
-          totalAmount = quantity*Soft_Porota;
-          break;
-  case 11:  flavour = Mad_Drums;
-          totalAmount = quantity*Mad_Drums;
-          break;
-  case 12: flavour = BBQ_Chicken_Wings;
-           totalAmount = quantity*BBQ_Chicken_Wings;
-          break;
-
-  case 13: flavour = Extra_Cheese;
-          totalAmount = quantity*Extra_Cheese;
-          break;
-  case 14:flavour = Egg;
-          totalAmount = quantity*Egg;
-          break;
-
-
-*/
-  /*cout<<"Your Total Bill is: "<<totalAmount<<endl;*/
 
 
     return 0;
 
 }
+
 
